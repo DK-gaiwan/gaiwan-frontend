@@ -1,19 +1,5 @@
 import React, { useEffect } from 'react';
 
-declare global {
-  interface Window {
-    Telegram?: {
-      WebApp?: {
-        initData?: string;
-        initDataUnsafe?: any;
-        ready: () => void;
-        sendData?: (data: string) => void;
-        close?: () => void;
-      };
-    };
-  }
-}
-
 function App() {
   useEffect(() => {
     if (window.Telegram?.WebApp) {
@@ -21,7 +7,12 @@ function App() {
     }
   }, []);
 
-  return <div>Hello from Gaiwan Frontend WebApp</div>;
+  return (
+    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Гайвань кальянщика</h1>
+      <p>Добро пожаловать в приложение для подбора кальяна и чая!</p>
+    </div>
+  );
 }
 
 export default App;
